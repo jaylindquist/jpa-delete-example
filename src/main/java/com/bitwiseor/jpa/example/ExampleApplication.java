@@ -55,8 +55,8 @@ public class ExampleApplication {
                 DataEntity toCombine = values.get(0);
                 DataEntity toDelete = values.get(1);
 
-                toCombine.setFirst(Math.min(toCombine.getFirst(), toDelete.getFirst()));
-                toCombine.setLast(Math.max(toCombine.getLast(), toDelete.getLast()));
+                toCombine.setFirst(toCombine.getFirst());
+                toCombine.setLast(toDelete.getLast());
                 toCombine.setMeta("Merged");
 
                 service.commit(toCombine, toDelete);
